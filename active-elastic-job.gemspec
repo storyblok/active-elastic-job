@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.homepage      = 'https://github.com/tawan/active-elastic-job'
 
-  spec.files         = Dir.glob('lib/**/*') + [ 'active-elastic-job.gemspec' ]
+  spec.files         = Dir.glob('lib/**/*') + ['active-elastic-job.gemspec']
   spec.executables   = []
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
@@ -23,5 +23,5 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.5'
 
   spec.add_dependency 'aws-sdk-sqs', '~> 1'
-  spec.add_dependency 'rails', '~> 5.0'
+  spec.add_dependency 'rails', '>= 5.0'
 end

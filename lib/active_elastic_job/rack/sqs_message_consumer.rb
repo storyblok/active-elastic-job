@@ -13,11 +13,11 @@ module ActiveElasticJob
     # (2) the processed SQS message was queued by this gem representing an active job.
     # In this case it verifies the digest which is sent along with a legit SQS
     # message, and passed as an HTTP header in the resulting request.
-    # The digest is based on Rails' +credentials.secret_key_base+.
+    # The digest is based on Rails' +application.secret_key_base+.
     # Therefore, the application running in the web environment, which generates
     # the digest, and the application running in the worker
     # environment, which verifies the digest, have to use the *same*
-    # +credentials.secret_key_base+ setting.
+    # +application.secret_key_base+ setting.
     class SqsMessageConsumer
       OK_RESPONSE = [ '200'.freeze, { 'Content-Type'.freeze => 'text/plain'.freeze }, [ 'OK'.freeze ] ]
       FORBIDDEN_RESPONSE = [
